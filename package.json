@@ -1,0 +1,32 @@
+{
+  "name": "react-keyshorts",
+  "version": "2.0.0",
+  "description": "A React hook for handling keyboard shortcuts.",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./dist/index.js"
+  },
+  "keywords": [
+    "react",
+    "hook",
+    "keyboard shortcut",
+    "keyboard",
+    "shortcuts",
+    "key",
+    "shortcuts"
+  ],
+  "author": "Your Name <your@email.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-react": "^7.24.7",
+    "@babel/preset-typescript": "^7.24.7",
+    "@types/react": "^18.3.4",
+    "@types/react-dom": "^18.3.0",
+    "babel-cli": "^6.26.0",
+    "typescript": "^5.5.4"
+  }
+}
