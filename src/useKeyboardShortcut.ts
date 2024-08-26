@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { isMatchingKey, isMatchingModifiers } from "./utils/keyboard-utils";
 
 export interface IUseKeyboardShortcutType {
   key: string;
@@ -27,20 +28,7 @@ export default function useKeyboardShortcut({
 
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
-      const {
-        key: pressedKey,
-        metaKey: pressedMetaKey,
-        ctrlKey: pressedCtrlKey,
-        shiftKey: pressedShiftKey,
-        altKey: pressedAltKey,
-      } = event;
-
-      if (
-        pressedKey.toLowerCase() === key.toLowerCase() &&
-        ((pressedMetaKey && metaKey) || (pressedCtrlKey && ctrlKey)) &&
-        pressedShiftKey === shiftKey &&
-        pressedAltKey === altKey
-      ) {
+      if (isMatchingKey(event.key, key) && isMatchingModifiers(event, metaKey, ctrlKey, shiftKey, altKey)) {
         if (preventDefault) {
           event.preventDefault();
         }
