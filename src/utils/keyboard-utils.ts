@@ -27,7 +27,7 @@ const isMatchingModifiers = (
   altKey: boolean
 ): boolean => {
   return (
-    ((metaKey && event.metaKey) || (ctrlKey && event.ctrlKey)) &&
+    ((event.metaKey && metaKey) || (event.ctrlKey && ctrlKey)) &&
     event.shiftKey === shiftKey &&
     event.altKey === altKey
   );
